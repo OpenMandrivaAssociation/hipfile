@@ -17,8 +17,6 @@ BuildRequires:	rocm-hip-devel
 BuildRequires:	cmake(rocprofiler-register)
 BuildRequires:	pkgconfig(mount)
 
-ExclusiveArch:	%{x86_64} %{aarch64}
-
 %description
 hipFile is the HIP counterpart of NVIDIA cuFile: GPU-direct I/O between
 storage and device memory. PyTorch USE_CUFILE and rocprofiler hipFile
