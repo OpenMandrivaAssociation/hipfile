@@ -12,6 +12,7 @@ Source0:	https://github.com/ROCm/rocm-systems/releases/download/therock-10.0/hip
 BuildRequires:	rocm-rpm-macros
 BuildRequires:	cmake
 BuildRequires:	ninja
+BuildRequires:	rocm-cmake
 BuildRequires:	hipcc
 BuildRequires:	rocm-hip-devel
 BuildRequires:	cmake(AMDDeviceLibs)
@@ -55,7 +56,8 @@ export CXXFLAGS
 	-DHIPFILE_ROCPROFILER_REGISTER=ON \
 	-DROCM_VERSION=%{version} \
 	-DROCM_PATH=%{_prefix} \
-	-DCMAKE_PREFIX_PATH=%{_prefix} \
+	-DCMAKE_PREFIX_PATH="%{_prefix};%{_datadir}/rocmcmakebuildtools" \
+	-DROCmCMakeBuildTools_DIR=%{_datadir}/rocmcmakebuildtools/cmake \
 	-G Ninja
 
 %ninja_build
