@@ -76,6 +76,7 @@ fi
 %doc README.md CHANGELOG.md
 %{_libdir}/libhipfile.so.*
 %{_bindir}/ais-stats
+%{_bindir}/ais-check
 %exclude %{_docdir}/hipfile/LICENSE.md
 
 %files devel
