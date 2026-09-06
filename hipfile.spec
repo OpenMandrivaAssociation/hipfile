@@ -37,9 +37,14 @@ Headers and CMake package for hipFile.
 %build
 export CXX=hipcc
 export CC=clang
-%cmake %{rocm_cmake_fhs} \
+CXXFLAGS=$(printf '%s' "%{optflags}" | sed 's/-mfpmath=sse//g')
+export CXXFLAGS
+%cmake %{rocm_cmake_fhs} %{rocm_cmake_gpu_targets} \
 	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 	-DCMAKE_CXX_COMPILER=hipcc \
+	-DCMAKE_HIP_COMPILER=hipcc \
+	-DCMAKE_HIP_ARCHITECTURES="%{rocm_gpu_targets}" \
+	-DCMAKE_CXX_FLAGS="$CXXFLAGS" \
 	-DBUILD_SHARED_LIBS=ON \
 	-DAIS_INSTALL_EXAMPLES=OFF \
 	-DAIS_INSTALL_TOOLS=ON \
