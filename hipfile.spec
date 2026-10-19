@@ -1,13 +1,13 @@
-# GPU-direct storage (cuFile-shaped HIP API). TheRock 10.0.
+# GPU-direct storage (cuFile-shaped HIP API). TheRock 10.1.
 
 Name:		hipfile
-Version:	10.0.0
+Version:	10.1.0
 Release:	1
 Summary:	HIP GPU-direct storage library
 License:	MIT
 Group:		System/Libraries
 URL:		https://github.com/ROCm/rocm-systems
-Source0:	https://github.com/ROCm/rocm-systems/releases/download/therock-10.0/hipfile.tar.gz#/hipfile-%{version}.tar.gz
+Source0:	https://github.com/ROCm/rocm-systems/releases/download/therock-10.1/hipfile.tar.gz#/hipfile-%{version}.tar.gz
 
 BuildRequires:	rocm-rpm-macros
 BuildRequires:	cmake
